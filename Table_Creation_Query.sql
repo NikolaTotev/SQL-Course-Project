@@ -1,7 +1,14 @@
-create database HotelDB
-go
-use HotelDB
-go
+--create database HotelDB
+--go
+--use HotelDB
+--go
+
+--Drop Table Rooms;
+--Drop Table RoomTypes;
+--Drop Table Guests;
+--Drop Table Reservations;
+--Drop Table Staff
+--Drop Table Payments
 
 Create Table RoomTypes
 (
@@ -30,11 +37,53 @@ checkOutDate date NOT NULL,
 numberOfGuests int NOT NULL,
 extraNotes varchar (1024) NOT NULL,
 )
+
+Create Table Reservations(
+ID char(16) NOT NULL,
+CheckInDate datetime NOT NULL,
+CheckOutDate datetime NOT NULL,
+ReservationDate datetime NOT NULL DEFAULT GETDATE(),
+Adults int NOT NULL,
+Children int NOT NULL,
+RoomNumber int NOT NULL,
+GuestID varchar(16) NOT NULL);
+
+Create Table Staff(
+EGN varchar(10) NOT NULL,
+FirstName varchar(256) NOT NULL,
+LastName varchar(256) NOT NULL,
+Job varchar(32) NOT NULL,
+LengthOfService int, --days
+StartDate datetime NOT NULL,
+EndDate datetime);
+
+Create Table Payments(
+ID varchar(16) NOT NULL,
+Room int NOT NULL,
+GuestID varchar(16) NOT NULL,
+BaseFee float NOT NULL,
+ExtraFee float,
+Method varchar(256),
+PaymentStatus bit,
+DueDate date NOT NULL);
+
 ----- Constraints -----
-ALTER TABLE RoomTypes ADD CONSTRAINT PK_RoomTypes PRIMARY KEY(roomType);
+alter TABLE RoomTypes add constraint PK_RoomTypes primary key(roomType);
 
-ALTER TABLE Guests ADD CONSTRAINT PK_Guests PRIMARY KEY(ID);
+alter TABLE Guests add constraint PK_Guests primary key(ID);
 
-ALTER TABLE Rooms ADD CONSTRAINT PK_Rooms PRIMARY KEY(roomNumber);
-ALTER TABLE Rooms ADD CONSTRAINT RT_Constraint FOREIGN KEY (roomType) REFERENCES RoomTypes(roomType);
-ALTER TABLE Rooms ADD CONSTRAINT RN_Constraint CHECK (roomNumber>0);
+alter TABLE Rooms add constraint PK_Rooms primary key(roomNumber);
+alter TABLE Rooms add constraint RT_Constraint foreign key (roomType) references RoomTypes(roomType);
+alter TABLE Rooms add constraint RN_Constraint check (roomNumber>0);
+
+alter table Reservations add constraint PK_Reservations primary key (ID);
+alter table Reservations add constraint FK_Reservations_Guest foreign key (GuestID) references Guests(ID);
+alter table Reservations add constraint Check_Adults check(Adults > 0);
+alter table Reservations add constraint Check_Children check(Children >= 0);
+
+alter table Staff add constraint PK_Staff primary key (EGN);
+alter table Staff add constraint Check_LengthOfService check(LengthOfService >= 0);
+
+alter table Payments add constraint PK_Payments primary key (ID);
+alter table Payments add constraint FK_Payments_Guest foreign key (GuestID) references Guests(ID);
+alter table Payments add constraint Check_PaymentMethod check (Method in ('PayPal', 'VISA', 'MasterCard', 'Cash'));
