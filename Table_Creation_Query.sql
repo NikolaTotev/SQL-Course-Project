@@ -1,3 +1,4 @@
-drop DATABASE TEST
-
-
+create database HotelDB
+go
+use HotelDB
+go
