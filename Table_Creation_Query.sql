@@ -5,8 +5,8 @@
 
 --Drop Table Rooms;
 --Drop Table RoomTypes;
---Drop Table Guests;
 --Drop Table Reservations;
+--Drop Table Guests;
 --Drop Table Staff
 --Drop Table Payments
 
