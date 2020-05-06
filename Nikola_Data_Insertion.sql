@@ -1,4 +1,4 @@
-use HotelDB
+﻿use HotelDB
 go
 
 INSERT INTO RoomTypes VALUES ('Single',1, 15);
@@ -23,4 +23,13 @@ INSERT INTO Rooms VALUES (14,'Apartment',0, 0);
 INSERT INTO Rooms VALUES (15, 'Single',0, 0);
 
 
-INSERT INTO Guests VALUES (,,,,,,'',4,'NONE');
+INSERT INTO Guests VALUES ('Guest1', 'Corona', 'Virus', 'NONE');
+INSERT INTO Guests VALUES ('Guest2', 'Jane', 'Dowson', 'NONE');
+INSERT INTO Guests VALUES ('Guest3', 'Mark', 'Anthony', 'NONE');
+INSERT INTO Guests VALUES ('Guest4', 'Димитър', 'Вапцаров', 'NONE');
+INSERT INTO Guests VALUES ('Guest5', 'Иван', 'Иванов', 'NONE');
+INSERT INTO Guests VALUES ('Guest6', 'Кирил', 'Антонов', 'NONE');
+INSERT INTO Guests VALUES ('Guest7', 'Jimmy', 'Carr', 'NONE');
+INSERT INTO Guests VALUES ('Guest8', 'Gabriel', 'Iglesias', 'NONE');
+INSERT INTO Guests VALUES ('Guest9', 'Stephen', 'King', 'NONE');
+INSERT INTO Guests VALUES ('Guest10', 'Daniel', 'Torrance','NONE');
