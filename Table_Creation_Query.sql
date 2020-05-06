@@ -77,7 +77,8 @@ alter TABLE Rooms add constraint RT_Constraint foreign key (roomType) references
 alter TABLE Rooms add constraint RN_Constraint check (roomNumber>0);
 
 alter table Reservations add constraint PK_Reservations primary key (ID);
-alter table Reservations add constraint FK_Reservations_Guest foreign key (GuestID) references Guests(ID);
+alter table Reservations add constraint FK_Reservations_Guests foreign key (GuestID) references Guests(ID);
+alter table Reservations add constraint FK_Reservations_Rooms foreign key (RoomNumber) references Rooms(roomNumber);
 alter table Reservations add constraint Check_Adults check(Adults > 0);
 alter table Reservations add constraint Check_Children check(Children >= 0);
 
@@ -85,7 +86,7 @@ alter table Staff add constraint PK_Staff primary key (EGN);
 alter table Staff add constraint Check_LengthOfService check(LengthOfService >= 0);
 
 alter table Payments add constraint PK_Payments primary key (ID);
-alter table Payments add constraint FK_Payments_Guest foreign key (GuestID) references Guests(ID);
+alter table Payments add constraint FK_Payments_Guests foreign key (GuestID) references Guests(ID);
 alter table Payments add constraint Check_PaymentMethod check (Method in ('PayPal', 'VISA', 'MasterCard', 'Cash'));
 alter table Payments add constraint Check_BaseFee check(BaseFee >= 0);
 alter table Payments add constraint Check_ExtraFee check(ExtraFee >= 0);
