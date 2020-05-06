@@ -61,10 +61,10 @@ Create Table Payments(
 ID varchar(16) NOT NULL,
 Room int NOT NULL,
 GuestID varchar(16) NOT NULL,
-BaseFee float NOT NULL,
-ExtraFee float,
-Method varchar(256),
-PaymentStatus bit,
+BaseFee decimal NOT NULL,
+ExtraFee decimal NOT NULL,
+Method varchar(256) NOT NULL,
+PaymentStatus bit NOT NULL,
 DueDate date NOT NULL);
 
 ----- Constraints -----
@@ -87,3 +87,5 @@ alter table Staff add constraint Check_LengthOfService check(LengthOfService >= 
 alter table Payments add constraint PK_Payments primary key (ID);
 alter table Payments add constraint FK_Payments_Guest foreign key (GuestID) references Guests(ID);
 alter table Payments add constraint Check_PaymentMethod check (Method in ('PayPal', 'VISA', 'MasterCard', 'Cash'));
+alter table Payments add constraint Check_BaseFee check(BaseFee >= 0);
+alter table Payments add constraint Check_ExtraFee check(ExtraFee >= 0);
