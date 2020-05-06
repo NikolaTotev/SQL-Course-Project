@@ -22,4 +22,5 @@ INSERT INTO Rooms VALUES (13, 'Single',0, 0);
 INSERT INTO Rooms VALUES (14,'Apartment',0, 0);
 INSERT INTO Rooms VALUES (15, 'Single',0, 0);
 
-Select * from Rooms
+
+INSERT INTO Guests VALUES (,,,,,,'',4,'NONE');
