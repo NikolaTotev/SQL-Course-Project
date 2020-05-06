@@ -30,7 +30,7 @@ Create Table Guests
 ID varchar(16) NOT NULL,
 FirstName varchar (256) NOT NULL,
 LastName varchar (256) NOT NULL,
-extraNotes varchar (1024) NOT NULL,
+extraNotes varchar (1024) NOT NULL
 );
 
 Create Table Reservations(
