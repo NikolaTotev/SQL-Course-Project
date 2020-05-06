@@ -3,12 +3,12 @@
 --use HotelDB
 --go
 
-Drop Table Rooms;
-Drop Table RoomTypes;
-Drop Table Reservations;
-Drop Table Guests;
-Drop Table Staff
-Drop Table Payments
+--Drop Table Rooms;
+--Drop Table RoomTypes;
+--Drop Table Reservations;
+--Drop Table Guests;
+--Drop Table Staff
+--Drop Table Payments;
 
 Create Table RoomTypes
 (
@@ -81,6 +81,7 @@ alter table Reservations add constraint Check_Children check(Children >= 0);
 
 alter table Staff add constraint PK_Staff primary key (EGN);
 alter table Staff add constraint Check_LengthOfService check(LengthOfService >= 0);
+alter table Staff add constraint Check_Salary check(Salary > 0);
 
 alter table Payments add constraint PK_Payments primary key (ID);
 alter table Payments add constraint FK_Payments_Guests foreign key (GuestID) references Guests(ID);
