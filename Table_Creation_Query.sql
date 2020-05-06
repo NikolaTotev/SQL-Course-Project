@@ -21,7 +21,6 @@ Create Table Rooms
 (
 roomNumber int NOT NULL,
 roomType char(16) NOT NULL,
-reservationStatus bit NOT NULL,
 cleaningStatus char(8) NOT NULL,
 requiresMaintenance bit NOT NULL
 )
