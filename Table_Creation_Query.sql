@@ -53,9 +53,11 @@ EGN varchar(10) NOT NULL,
 FirstName varchar(256) NOT NULL,
 LastName varchar(256) NOT NULL,
 Job varchar(32) NOT NULL,
+Salary decimal NOT NULL,
 LengthOfService int, --days
 StartDate datetime NOT NULL,
-EndDate datetime);
+EndDate datetime
+);
 
 Create Table Payments(
 ID varchar(16) NOT NULL,
