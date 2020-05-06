@@ -3,12 +3,12 @@
 --use HotelDB
 --go
 
---Drop Table Rooms;
---Drop Table RoomTypes;
---Drop Table Reservations;
---Drop Table Guests;
---Drop Table Staff
---Drop Table Payments
+Drop Table Rooms;
+Drop Table RoomTypes;
+Drop Table Reservations;
+Drop Table Guests;
+Drop Table Staff
+Drop Table Payments
 
 Create Table RoomTypes
 (
@@ -35,7 +35,7 @@ checkInDate date NOT NULL,
 checkOutDate date NOT NULL,
 numberOfGuests int NOT NULL,
 extraNotes varchar (1024) NOT NULL,
-)
+);
 
 Create Table Reservations(
 ID char(16) NOT NULL,
@@ -45,7 +45,8 @@ ReservationDate datetime NOT NULL DEFAULT GETDATE(),
 Adults int NOT NULL,
 Children int NOT NULL,
 RoomNumber int NOT NULL,
-GuestID varchar(16) NOT NULL);
+GuestID varchar(16) NOT NULL,
+);
 
 Create Table Staff(
 EGN varchar(10) NOT NULL,
@@ -58,13 +59,12 @@ EndDate datetime);
 
 Create Table Payments(
 ID varchar(16) NOT NULL,
-Room int NOT NULL,
 GuestID varchar(16) NOT NULL,
-BaseFee decimal NOT NULL,
+BaseFee decimal NOT NULL, --all reservations with guest id, (get price per night * days)
 ExtraFee decimal NOT NULL,
 Method varchar(256) NOT NULL,
-PaymentStatus bit NOT NULL,
-DueDate date NOT NULL);
+PaymentStatus char(3) NOT NULL,
+TransactionDate date NOT NULL);
 
 ----- Constraints -----
 alter TABLE RoomTypes add constraint PK_RoomTypes primary key(roomType);
