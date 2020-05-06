@@ -3,12 +3,12 @@
 --use HotelDB
 --go
 
---Drop Table Rooms;
---Drop Table RoomTypes;
---Drop Table Reservations;
---Drop Table Guests;
---Drop Table Staff
---Drop Table Payments;
+Drop Table Rooms;
+Drop Table RoomTypes;
+Drop Table Reservations;
+Drop Table Guests;
+Drop Table Staff
+Drop Table Payments;
 
 Create Table RoomTypes
 (
