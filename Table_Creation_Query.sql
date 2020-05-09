@@ -61,7 +61,7 @@ GuestID varchar(16) NOT NULL,
 BaseFee decimal NOT NULL, --all reservations with guest id, (get price per night * days)
 ExtraFee decimal NOT NULL,
 Method varchar(256) NOT NULL,
-PaymentStatus char(3) NOT NULL,
+PaymentStatus char(256) NOT NULL,
 TransactionDate date NOT NULL);
 
 ----- Constraints -----
@@ -89,3 +89,4 @@ alter table Payments add constraint FK_Payments_Guests foreign key (GuestID) ref
 alter table Payments add constraint Check_PaymentMethod check (Method in ('PayPal', 'VISA', 'MasterCard', 'Cash'));
 alter table Payments add constraint Check_BaseFee check(BaseFee >= 0);
 alter table Payments add constraint Check_ExtraFee check(ExtraFee >= 0);
+alter table Payments add constraint Check_PaymentStatus check(PaymentStatus in ('Processing', 'Paid', 'Failed'));
