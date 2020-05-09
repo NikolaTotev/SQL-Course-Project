@@ -6,9 +6,9 @@
 --Drop Table Reservations;
 --Drop Table Rooms;
 --Drop Table RoomTypes;
---Drop Table Guests;
 --Drop Table Staff
 --Drop Table Payments;
+--Drop Table Guests;
 
 Create Table RoomTypes
 (
@@ -21,7 +21,7 @@ Create Table Rooms
 (
 roomNumber int NOT NULL,
 roomType char(16) NOT NULL,
-cleaningStatus char(8) NOT NULL,
+requiresCleaning bit NOT NULL,
 requiresMaintenance bit NOT NULL
 )
 
