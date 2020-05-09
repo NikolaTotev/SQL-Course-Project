@@ -7,18 +7,18 @@ from Guests g);
 
 select g.FirstName, g.LastName
 from Guests g, Reservations r
-where g.ID = r.GuestID and r.CheckInDate >= '20190101' and r.CheckOutDate < '20200101';
+where g.EGN = r.GuestEGN and r.CheckInDate >= '20190101' and r.CheckOutDate < '20200101';
 
 select s.roomNumber, rt.numberOfBeds, rt.pricePerNight 
 from Rooms s, RoomTypes rt
 where s.roomType = rt.roomType;
 
-(select r.GuestID
+(select r.GuestEGN
 from Reservations r
-group by r.GuestID 
+group by r.GuestEGN 
 having COUNT(*) >= 2)
 intersect
-(select p.GuestID
+(select p.GuestEGN
 from Payments p
 where p.Method = 'VISA');
 
@@ -31,7 +31,7 @@ from Rooms r
 where r.requiresMaintenance = 1);
 
 -------Subqueries------------
-select g.FirstName, g.LastName, (select COUNT(*) from Reservations r where r.GuestID = g.ID) as num_reservations
+select g.FirstName, g.LastName, (select COUNT(*) from Reservations r where r.GuestEGN = g.EGN) as num_reservations
 from Guests g;
 
 select s.FirstName, s.LastName, s.Job 
@@ -40,10 +40,10 @@ where s.Salary >= (select AVG(Salary) from Staff);
 
 select g.FirstName, g.LastName
 from Guests g
-join (select r.GuestID
+join (select r.GuestEGN
 	from Reservations r
 	where r.CheckInDate >= '20190101' and r.CheckOutDate < '20200101') as dt
-on g.ID = dt.GuestID;
+on g.EGN = dt.GuestEGN;
 
 select s.FirstName, s.LastName, s.Salary
 from Staff s
@@ -60,10 +60,10 @@ where s.Salary >= (select MAX(st.Salary)
 select g.FirstName, g.LastName
 from Guests g
 join
-	(select r.GuestID, COUNT(*) as num_count	
+	(select r.GuestEGN, COUNT(*) as num_count	
 	from Reservations r 
-	group by r.GuestID ) as dt
-on g.ID = dt.GuestID
+	group by r.GuestEGN ) as dt
+on g.EGN = dt.GuestEGN
 where num_count >= 2;
 
 select p.Method, COUNT(*) count_payments
@@ -97,32 +97,32 @@ group by s.Job;
 select g.FirstName, g.LastName, COUNT(*) as num_reservations
 from Guests g
 join Reservations r
-on g.ID = r.GuestID
-group by g.ID, g.FirstName, g.LastName
+on g.EGN = r.GuestEGN
+group by g.EGN, g.FirstName, g.LastName
 order by num_reservations ASC;
 
 select gu.FirstName, gu.LastName, dt.money
 from Guests gu
-join (select g.ID, ROUND(SUM(DATEDIFF(day,r.CheckInDate,r.CheckOutDate)*rt.pricePerNight),2) as money
+join (select g.EGN, ROUND(SUM(DATEDIFF(day,r.CheckInDate,r.CheckOutDate)*rt.pricePerNight),2) as money
 	from Guests g
 	join Reservations r
-	on g.ID = r.GuestID
+	on g.EGN = r.GuestEGN
 	join Rooms rm 
 	on r.RoomNumber = rm.roomNumber
 	join RoomTypes rt 
 	on rm.roomType = rt.roomType
-	group by g.ID) as dt
-on dt.ID = gu.ID;
+	group by g.EGN) as dt
+on dt.EGN = gu.EGN;
 
 select gu.FirstName, gu.LastName, dt.money
 from Guests gu
-join (select g.ID, ROUND(AVG(DATEDIFF(day,r.CheckInDate,r.CheckOutDate)*rt.pricePerNight),2) as money
+join (select g.EGN, ROUND(AVG(DATEDIFF(day,r.CheckInDate,r.CheckOutDate)*rt.pricePerNight),2) as money
 	from Guests g
 	join Reservations r
-	on g.ID = r.GuestID
+	on g.EGN = r.GuestEGN
 	join Rooms rm 
 	on r.RoomNumber = rm.roomNumber
 	join RoomTypes rt 
 	on rm.roomType = rt.roomType
-	group by g.ID) as dt
-on dt.ID = gu.ID;
+	group by g.EGN) as dt
+on dt.EGN = gu.EGN;

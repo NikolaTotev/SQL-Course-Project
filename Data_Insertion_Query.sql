@@ -66,9 +66,9 @@ INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Child
 INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190217 11:00:00 AM', '20190222 11:00:00 AM', '20190101 11:00:00 AM', 3, 1, 12, 'Guest5');
 
 
-INSERT INTO Payments(id, GuestEGN, BaseFee, ExtraFee, Method, PaymentStatus, TransactionDate)
-SELECT top 5 newid() , p.GuestEGN, p.BaseFee, 0, 'PayPal', 'Processing', GETDATE()
-FROM PaymentInfo as p
+--INSERT INTO Payments(id, GuestEGN, BaseFee, ExtraFee, Method, PaymentStatus, TransactionDate)
+--SELECT top 5 newid() , p.GuestEGN, p.BaseFee, 0, 'PayPal', 'Processing', GETDATE()
+--FROM PaymentInfo as p
 
 
 
@@ -77,4 +77,25 @@ select * from Payments
 
 select * from PaymentInfo
 
-select * from Reservations
+--select * from Reservations
+
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest10', 150, 'PayPal', 'Processing', '20200214');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest7', 30, 'Cash', 'Processing', '20200715');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest10', 75, 'VISA', 'Paid', '20200517');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest6', 1050, 'PayPal', 'Paid', '20190524');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest4', 50, 'Cash', 'Processing', '20200722');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest2', 150, 'MasterCard', 'Paid', '20200423');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest3', 120, 'PayPal', 'Paid', '20200731');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest8', 45, 'VISA', 'Paid', '20200718');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest2', 300, 'PayPal', 'Processing', '20200803');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest10', 150, 'VISA', 'Paid', '20200116');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest9', 350, 'Cash', 'Failed', '20190320');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest3', 400, 'MasterCard', 'Paid', '20190325');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest2', 50, 'MasterCard', 'Failed', '20200713');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest1', 915, 'VISA', 'Paid', '20200513');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest10', 300, 'PayPal', 'Paid', '20200824');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest1', 450, 'Cash', 'Paid', '20200710');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest5', 250, 'VISA', 'Failed', '20190222');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest7', 1250, 'MasterCard', 'Paid', '20190215');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest6', 15, 'PayPal', 'Processing', '20200720');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest9', 105, 'Cash', 'Paid', '20200811');
