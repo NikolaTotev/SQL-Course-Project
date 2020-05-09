@@ -12,27 +12,3 @@ INSERT INTO Reservations VALUES ('R1.7', '20190517 11:00:00 AM', '20190524 11:00
 INSERT INTO Reservations VALUES ('R1.8', '20190217 11:00:00 AM', '20190222 11:00:00 AM', '20190101 11:00:00 AM', 3, 1, 12, 'Guest5');
 INSERT INTO Reservations VALUES ('R1.9', '20190313 11:00:00 AM', '20190320 11:00:00 AM', '20190221 11:00:00 AM', 4, 2, 3, 'Guest9'); 
 
-CREATE TRIGGER Before_Reservation_Insert On Reservations
-INSTEAD OF INSERT AS 
-BEGIN
-	if exists(select * from inserted i where i.CheckInDate >= i.CheckOutDate or i.CheckInDate > i.CheckOutDate)
-		throw 5200, 'Wrong dates', 1;
-	else 
-		if exists(select * from Reservations r 
-		where r.RoomNumber = (select i.RoomNumber from inserted i) and 
-		((r.CheckInDate >= (select i.CheckInDate from inserted i) and r.CheckInDate < (select i.CheckOutDate from inserted i))
-		or (r.CheckOutDate > (select i.CheckInDate from inserted i) and r.CheckOutDate <= (select i.CheckOutDate from inserted i)))
-		)
-			throw 5200, 'Room not empty', 1;
-		else 
-			insert into Reservations values(
-			(select top 1 i.ID from inserted i),
-			(select top 1 i.CheckInDate from inserted i),
-			(select top 1 i.CheckOutDate from inserted i),
-			(select top 1 i.ReservationDate from inserted i),
-			(select top 1 i.Adults from inserted i),
-			(select top 1 i.Children from inserted i),
-			(select top 1 i.RoomNumber from inserted i),
-			(select top 1 i.GuestID from inserted i)
-		)
-END;

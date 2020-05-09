@@ -3,9 +3,9 @@
 --use HotelDB
 --go
 
+--Drop Table Reservations;
 --Drop Table Rooms;
 --Drop Table RoomTypes;
---Drop Table Reservations;
 --Drop Table Guests;
 --Drop Table Staff
 --Drop Table Payments;
