@@ -30,6 +30,32 @@ union
 from Rooms r
 where r.requiresMaintenance = 1);
 
+-------Subqueries------------
+select g.FirstName, g.LastName, (select COUNT(*) from Reservations r where r.GuestID = g.ID) as num_reservations
+from Guests g;
+
+select s.FirstName, s.LastName, s.Job 
+from Staff s
+where s.Salary >= (select AVG(Salary) from Staff);
+
+select g.FirstName, g.LastName
+from Guests g
+join (select r.GuestID
+	from Reservations r
+	where r.CheckInDate >= '20190101' and r.CheckOutDate < '20200101') as dt
+on g.ID = dt.GuestID;
+
+select s.FirstName, s.LastName, s.Salary
+from Staff s
+where s.Salary in (select MIN(Salary) from Staff);
+
+select s.FirstName, s.LastName, s.Job
+from Staff s
+where s.Salary >= (select MAX(st.Salary) 
+				from Staff st 
+				where st.EndDate is NULL and st.StartDate in 
+				(select MIN(StartDate) from Staff where EndDate is NULL) );
+
 --Group by and Aggregation--
 select g.FirstName, g.LastName
 from Guests g
