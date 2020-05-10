@@ -13,6 +13,3 @@ ROLLBACK TRANSACTION;
 RETURN 
 END;
 
-Drop trigger OnStaffInsertUpdate
-INSERT INTO Staff VALUES ('9624565390', 'Laura', 'Lopez', 'Chef', 1200,	1267,'20110111 11:00:00 AM', '20100111 11:00:00 AM');
-
