@@ -20,16 +20,16 @@ INSERT INTO Rooms VALUES (14,'Apartment',0, 0);
 INSERT INTO Rooms VALUES (15, 'Single',0, 0);
 
 
-INSERT INTO Guests VALUES ('Guest1', 'Corona', 'Virus', 'NONE');
-INSERT INTO Guests VALUES ('Guest2', 'Jane', 'Dowson', 'NONE');
-INSERT INTO Guests VALUES ('Guest3', 'Mark', 'Anthony', 'NONE');
-INSERT INTO Guests VALUES ('Guest4', 'Димитър', 'Вапцаров', 'NONE');
-INSERT INTO Guests VALUES ('Guest5', 'Иван', 'Иванов', 'NONE');
-INSERT INTO Guests VALUES ('Guest6', 'Кирил', 'Антонов', 'NONE');
-INSERT INTO Guests VALUES ('Guest7', 'Jimmy', 'Carr', 'NONE');
-INSERT INTO Guests VALUES ('Guest8', 'Gabriel', 'Iglesias', 'NONE');
-INSERT INTO Guests VALUES ('Guest9', 'Stephen', 'King', 'NONE');
-INSERT INTO Guests VALUES ('Guest10', 'Daniel', 'Torrance','NONE');
+INSERT INTO Guests VALUES ('8798216354', 'Corona', 'Virus', 'NONE');
+INSERT INTO Guests VALUES ('3464657446', 'Jane', 'Dowson', 'NONE');
+INSERT INTO Guests VALUES ('6987446353', 'Mark', 'Anthony', 'NONE');
+INSERT INTO Guests VALUES ('6548324584', 'Димитър', 'Вапцаров', 'NONE');
+INSERT INTO Guests VALUES ('5495218574', 'Иван', 'Иванов', 'NONE');
+INSERT INTO Guests VALUES ('3354788556', 'Кирил', 'Антонов', 'NONE');
+INSERT INTO Guests VALUES ('5485684265', 'Jimmy', 'Carr', 'NONE');
+INSERT INTO Guests VALUES ('9856987548', 'Gabriel', 'Iglesias', 'NONE');
+INSERT INTO Guests VALUES ('5458965784', 'Stephen', 'King', 'NONE');
+INSERT INTO Guests VALUES ('4526485595', 'Daniel', 'Torrance','NONE');
 
 
 INSERT INTO Staff VALUES ('1234567890', 'Corona', 'Virus', 'Maid', 200.00,	1000,'20200313 11:00:00 AM', null);
