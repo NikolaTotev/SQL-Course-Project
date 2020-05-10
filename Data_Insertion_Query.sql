@@ -44,26 +44,26 @@ INSERT INTO Staff VALUES ('9624567890', 'Ryan', 'Gosling', 'Piccolo', 500,	39,'2
 INSERT INTO Staff VALUES ('9624565390', 'Laura', 'Lopez', 'Chef', 1200,	1267,'20110111 11:00:00 AM', null);
 
 
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200701 11:00:00 AM','20200710 11:00:00 AM','20200610 10:00:00 AM', '2','3' ,'3', 'Guest1');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200711 11:00:00 AM','20200713 11:00:00 AM','20200615 7:00:00 AM', '2','3' ,'2', 'Guest2');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200715 11:00:00 AM','20200718 11:00:00 AM','20200310 8:00:00 AM', '2','3' ,'10', 'Guest8');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200713 11:00:00 AM','20200715 11:00:00 AM','20200611 4:00:00 AM', '2','1' ,'5', 'Guest7');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200719 11:00:00 AM','20200720 11:00:00 AM','20200212 11:00:00 AM', '2','0' ,'1', 'Guest6');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200721 11:00:00 AM','20200722 11:00:00 AM','20200610 12:00:00 PM', '2','4' ,'12', 'Guest4');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200723 11:00:00 AM','20200731 11:00:00 AM','20200617 1:00:00 PM', '3','0' ,'13', 'Guest3');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200801 11:00:00 AM','20200803 11:00:00 AM','20200102 2:00:00 PM', '2','2' ,'4', 'Guest2');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200804 11:00:00 AM', '20200811 11:00:00 AM','20200601 4:00:00 PM', '2','4' ,'10', 'Guest9');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200812 11:00:00 AM','20200824 11:00:00 AM','20200401 6:00:00 PM', '2','4' ,'6', 'Guest10');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200313 11:00:00 AM', '20200513 11:00:00 AM', '20200213 11:00:00 AM', 1, 0, 1, 'Guest1');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200514 11:00:00 AM', '20200517 11:00:00 AM', '20200313 11:00:00 AM', 2, 1, 2, 'Guest10');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200420 11:00:00 AM', '20200423 11:00:00 AM', '20200313 11:00:00 AM', 3, 2, 12, 'Guest2'); 
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200211 11:00:00 AM', '20200214 11:00:00 AM', '20200113 11:00:00 AM', 2, 2, 7, 'Guest10');
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200113 11:00:00 AM', '20200116 11:00:00 AM', '20200101 11:00:00 AM', 3, 1, 8, 'Guest10'); 
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190121 11:00:00 AM', '20190215 11:00:00 AM', '20190101 11:00:00 AM', 2, 3, 9, 'Guest7'); 
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190317 11:00:00 AM', '20190325 11:00:00 AM', '20190113 11:00:00 AM', 3, 0, 14, 'Guest3'); 
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190313 11:00:00 AM', '20190320 11:00:00 AM', '20190221 11:00:00 AM', 4, 2, 3, 'Guest9'); 
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190517 11:00:00 AM', '20190524 11:00:00 AM', '20190313 11:00:00 AM', 2, 0, 4, 'Guest6'); 
-INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190217 11:00:00 AM', '20190222 11:00:00 AM', '20190101 11:00:00 AM', 3, 1, 12, 'Guest5');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200701 11:00:00 AM','20200710 11:00:00 AM','20200610 10:00:00 AM', '2','3' ,'3', '8798216354');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200711 11:00:00 AM','20200713 11:00:00 AM','20200615 7:00:00 AM', '2','3' ,'2', '3464657446');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200715 11:00:00 AM','20200718 11:00:00 AM','20200310 8:00:00 AM', '2','3' ,'10', '9856987548');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200713 11:00:00 AM','20200715 11:00:00 AM','20200611 4:00:00 AM', '2','1' ,'5', '5485684265');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200719 11:00:00 AM','20200720 11:00:00 AM','20200212 11:00:00 AM', '2','0' ,'1', '3354788556');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200721 11:00:00 AM','20200722 11:00:00 AM','20200610 12:00:00 PM', '2','4' ,'12', '6548324584');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200723 11:00:00 AM','20200731 11:00:00 AM','20200617 1:00:00 PM', '3','0' ,'13', '6987446353');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200801 11:00:00 AM','20200803 11:00:00 AM','20200102 2:00:00 PM', '2','2' ,'4', '3464657446');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200804 11:00:00 AM', '20200811 11:00:00 AM','20200601 4:00:00 PM', '2','4' ,'10', '5458965784');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200812 11:00:00 AM','20200824 11:00:00 AM','20200401 6:00:00 PM', '2','4' ,'6', '4526485595');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200313 11:00:00 AM', '20200513 11:00:00 AM', '20200213 11:00:00 AM', 1, 0, 1, '8798216354');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200514 11:00:00 AM', '20200517 11:00:00 AM', '20200313 11:00:00 AM', 2, 1, 2, '4526485595');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200420 11:00:00 AM', '20200423 11:00:00 AM', '20200313 11:00:00 AM', 3, 2, 12, '3464657446'); 
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200211 11:00:00 AM', '20200214 11:00:00 AM', '20200113 11:00:00 AM', 2, 2, 7, '4526485595');
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20200113 11:00:00 AM', '20200116 11:00:00 AM', '20200101 11:00:00 AM', 3, 1, 8, '4526485595'); 
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190121 11:00:00 AM', '20190215 11:00:00 AM', '20190101 11:00:00 AM', 2, 3, 9, '5485684265'); 
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190317 11:00:00 AM', '20190325 11:00:00 AM', '20190113 11:00:00 AM', 3, 0, 14, '6987446353'); 
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190313 11:00:00 AM', '20190320 11:00:00 AM', '20190221 11:00:00 AM', 4, 2, 3, '5458965784'); 
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190517 11:00:00 AM', '20190524 11:00:00 AM', '20190313 11:00:00 AM', 2, 0, 4, '3354788556'); 
+INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190217 11:00:00 AM', '20190222 11:00:00 AM', '20190101 11:00:00 AM', 3, 1, 12, '5495218574');
 
 
 --INSERT INTO Payments(id, GuestEGN, BaseFee, ExtraFee, Method, PaymentStatus, TransactionDate)
@@ -79,23 +79,23 @@ select * from PaymentInfo
 
 --select * from Reservations
 
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest10', 150, 'PayPal', 'Processing', '20200214');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest7', 30, 'Cash', 'Processing', '20200715');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest10', 75, 'VISA', 'Paid', '20200517');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest6', 1050, 'PayPal', 'Paid', '20190524');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest4', 50, 'Cash', 'Processing', '20200722');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest2', 150, 'MasterCard', 'Paid', '20200423');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest3', 120, 'PayPal', 'Paid', '20200731');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest8', 45, 'VISA', 'Paid', '20200718');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest2', 300, 'PayPal', 'Processing', '20200803');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest10', 150, 'VISA', 'Paid', '20200116');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest9', 350, 'Cash', 'Failed', '20190320');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest3', 400, 'MasterCard', 'Paid', '20190325');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest2', 50, 'MasterCard', 'Failed', '20200713');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest1', 915, 'VISA', 'Paid', '20200513');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest10', 300, 'PayPal', 'Paid', '20200824');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest1', 450, 'Cash', 'Paid', '20200710');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest5', 250, 'VISA', 'Failed', '20190222');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest7', 1250, 'MasterCard', 'Paid', '20190215');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest6', 15, 'PayPal', 'Processing', '20200720');
-INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('Guest9', 105, 'Cash', 'Paid', '20200811');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('4526485595', 150, 'PayPal', 'Processing', '20200214');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('5485684265', 30, 'Cash', 'Processing', '20200715');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('4526485595', 75, 'VISA', 'Paid', '20200517');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('3354788556', 1050, 'PayPal', 'Paid', '20190524');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('6548324584', 50, 'Cash', 'Processing', '20200722');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('3464657446', 150, 'MasterCard', 'Paid', '20200423');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('6987446353', 120, 'PayPal', 'Paid', '20200731');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('9856987548', 45, 'VISA', 'Paid', '20200718');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('3464657446', 300, 'PayPal', 'Processing', '20200803');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('4526485595', 150, 'VISA', 'Paid', '20200116');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('5458965784', 350, 'Cash', 'Failed', '20190320');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('6987446353', 400, 'MasterCard', 'Paid', '20190325');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('3464657446', 50, 'MasterCard', 'Failed', '20200713');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('8798216354', 915, 'VISA', 'Paid', '20200513');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('4526485595', 300, 'PayPal', 'Paid', '20200824');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('8798216354', 450, 'Cash', 'Paid', '20200710');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('5495218574', 250, 'VISA', 'Failed', '20190222');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('5485684265', 1250, 'MasterCard', 'Paid', '20190215');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('3354788556', 15, 'PayPal', 'Processing', '20200720');
+INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('5458965784', 105, 'Cash', 'Paid', '20200811');
