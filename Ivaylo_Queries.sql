@@ -77,6 +77,7 @@ order by count_payments DESC;
 
 select p.Method, SUM(p.BaseFee + p.ExtraFee) as sum_from_method
 from Payments p 
+where p.PaymentStatus = 'Paid'
 group by p.Method;
 
 select p.PaymentStatus, COUNT(*) count_payments
@@ -105,9 +106,9 @@ on g.EGN = r.GuestEGN
 group by g.EGN, g.FirstName, g.LastName
 order by num_reservations ASC;
 
-select gu.FirstName, gu.LastName, dt.money
+select gu.FirstName, gu.LastName, dt.sum_money
 from Guests gu
-join (select g.EGN, ROUND(SUM(DATEDIFF(day,r.CheckInDate,r.CheckOutDate)*rt.pricePerNight),2) as money
+join (select g.EGN, ROUND(SUM(DATEDIFF(day,r.CheckInDate,r.CheckOutDate)*rt.pricePerNight),2) as sum_money
 	from Guests g
 	join Reservations r
 	on g.EGN = r.GuestEGN
@@ -118,9 +119,9 @@ join (select g.EGN, ROUND(SUM(DATEDIFF(day,r.CheckInDate,r.CheckOutDate)*rt.pric
 	group by g.EGN) as dt
 on dt.EGN = gu.EGN;
 
-select gu.FirstName, gu.LastName, dt.money
+select gu.FirstName, gu.LastName, dt.avg_money
 from Guests gu
-join (select g.EGN, ROUND(AVG(DATEDIFF(day,r.CheckInDate,r.CheckOutDate)*rt.pricePerNight),2) as money
+join (select g.EGN, ROUND(AVG(DATEDIFF(day,r.CheckInDate,r.CheckOutDate)*rt.pricePerNight),2) as avg_money
 	from Guests g
 	join Reservations r
 	on g.EGN = r.GuestEGN
