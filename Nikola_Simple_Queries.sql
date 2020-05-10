@@ -9,7 +9,6 @@ select * from Staff where Job = 'Piccolo'
 
 -- Queries on two or more relations --
 select * 
-
 from 
 (
 	select reservations.roomnumber, rooms.roomtype 
@@ -26,7 +25,7 @@ from
 (
 	select reservations.GuestEGN, Guests.FirstName,Guests.LastName,Guests.ExtraNotes
 	from reservations join Guests on reservations.GuestEGN=Guests.EGN
-) as roomTypes
+) as roomType
 where FirstName = 'Jane'
 
 select * 
@@ -37,6 +36,7 @@ from
 	join rooms 
 	on reservations.RoomNumber=rooms.roomNumber
 ) as roomTs
+
 join guests 
 on guests.EGN=roomTs.GuestEGN
 where extranotes='NONE'
@@ -44,6 +44,24 @@ where extranotes='NONE'
 select roomNumber, roomType, FirstName, LastName 
 from 
 (
-select reservations.roomnumber, rooms.roomtype, reservations.GuestEGN, reservations.adults from reservations join rooms on reservations.RoomNumber=rooms.roomNumber) as roomTs join guests on guests.EGN=roomTs.GuestEGN where extranotes='NONE' and roomTs.Adults = 2
-select roomNumber, roomType, FirstName, LastName, CheckInDate, CheckOutDate from (select reservations.roomnumber, rooms.roomtype, reservations.GuestEGN, reservations.adults, reservations.CheckInDate, reservations.CheckOutDate from reservations join rooms on reservations.RoomNumber=rooms.roomNumber) as roomTs join guests on guests.EGN=roomTs.GuestEGN where extranotes='NONE' and roomTs.Adults = 2 and roomTs.Roomtype = 'Pent House'
+	select reservations.roomnumber, rooms.roomtype, reservations.GuestEGN, reservations.adults 
+	from reservations join rooms on reservations.RoomNumber=rooms.roomNumber
+) 
+as roomTs 
+join guests 
+on guests.EGN=roomTs.GuestEGN 
+where extranotes='NONE' and roomTs.Adults = 2
+
+select roomNumber, roomType, FirstName, LastName, CheckInDate, CheckOutDate 
+from 
+(
+	select reservations.roomnumber, rooms.roomtype, reservations.GuestEGN, reservations.adults, reservations.CheckInDate, reservations.CheckOutDate 
+	from reservations 
+	join rooms 
+	on reservations.RoomNumber=rooms.roomNumber
+) 
+as roomTs 
+join guests 
+on guests.EGN=roomTs.GuestEGN 
+where extranotes='NONE' and roomTs.Adults = 2 and roomTs.Roomtype = 'Pent House'
 
