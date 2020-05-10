@@ -20,7 +20,7 @@ INSERT INTO Rooms VALUES (14,'Apartment',0, 0);
 INSERT INTO Rooms VALUES (15, 'Single',0, 0);
 
 
-INSERT INTO Guests VALUES ('8798216354', 'Corona', 'Virus', 'NONE');
+INSERT INTO Guests VALUES ('8798216354', 'Jane', 'Anderson', 'NONE');
 INSERT INTO Guests VALUES ('3464657446', 'Jane', 'Dowson', 'NONE');
 INSERT INTO Guests VALUES ('6987446353', 'Mark', 'Anthony', 'NONE');
 INSERT INTO Guests VALUES ('6548324584', 'Димитър', 'Вапцаров', 'NONE');
@@ -65,7 +65,7 @@ INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Child
 INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190517 11:00:00 AM', '20190524 11:00:00 AM', '20190313 11:00:00 AM', 2, 0, 4, '3354788556'); 
 INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190217 11:00:00 AM', '20190222 11:00:00 AM', '20190101 11:00:00 AM', 3, 1, 12, '5495218574');
 
-
+remove * from reser
 --INSERT INTO Payments(id, GuestEGN, BaseFee, ExtraFee, Method, PaymentStatus, TransactionDate)
 --SELECT top 5 newid() , p.GuestEGN, p.BaseFee, 0, 'PayPal', 'Processing', GETDATE()
 --FROM PaymentInfo as p
@@ -99,3 +99,4 @@ INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) 
 INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('5485684265', 1250, 'MasterCard', 'Paid', '20190215');
 INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('3354788556', 15, 'PayPal', 'Processing', '20200720');
 INSERT INTO Payments(GuestEGN, BaseFee, Method, PaymentStatus, TransactionDate) VALUES ('5458965784', 105, 'Cash', 'Paid', '20200811');
+

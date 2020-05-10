@@ -28,7 +28,7 @@ from
 ) as roomType
 where FirstName = 'Jane'
 
-select * 
+select top 8 * 
 from 
 (
 	select reservations.roomnumber, rooms.roomtype, reservations.GuestEGN 
@@ -41,21 +41,25 @@ join guests
 on guests.EGN=roomTs.GuestEGN
 where extranotes='NONE'
 
-select roomNumber, roomType, FirstName, LastName 
+select top 4 roomNumber, roomType, FirstName, LastName 
 from 
 (
 	select reservations.roomnumber, rooms.roomtype, reservations.GuestEGN, reservations.adults 
 	from reservations join rooms on reservations.RoomNumber=rooms.roomNumber
 ) 
+
 as roomTs 
 join guests 
 on guests.EGN=roomTs.GuestEGN 
 where extranotes='NONE' and roomTs.Adults = 2
 
+
 select roomNumber, roomType, FirstName, LastName, CheckInDate, CheckOutDate 
 from 
 (
-	select reservations.roomnumber, rooms.roomtype, reservations.GuestEGN, reservations.adults, reservations.CheckInDate, reservations.CheckOutDate 
+	select reservations.roomnumber, rooms.roomtype, 
+		   reservations.GuestEGN, reservations.adults, 
+		   reservations.CheckInDate, reservations.CheckOutDate 
 	from reservations 
 	join rooms 
 	on reservations.RoomNumber=rooms.roomNumber
@@ -63,5 +67,5 @@ from
 as roomTs 
 join guests 
 on guests.EGN=roomTs.GuestEGN 
-where extranotes='NONE' and roomTs.Adults = 2 and roomTs.Roomtype = 'Pent House'
+where extranotes='NONE' and roomTs.Adults = 2 and roomTs.Roomtype = 'Pent House' and FirstName='Jane'
 

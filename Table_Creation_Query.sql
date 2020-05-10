@@ -30,8 +30,8 @@ requiresMaintenance bit NOT NULL
 Create Table Guests
 (
 EGN varchar(10) NOT NULL,
-FirstName varchar (256) NOT NULL,
-LastName varchar (256) NOT NULL,
+FirstName nvarchar (256) NOT NULL,
+LastName nvarchar (256) NOT NULL,
 extraNotes varchar (1024) NOT NULL
 );
 
