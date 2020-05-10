@@ -1,7 +1,7 @@
 -- Queries on two or more relations --
 (select s.FirstName, s.LastName
 from Staff s)
-UNION
+UNION ALL
 (select g.FirstName, g.LastName
 from Guests g);
 
@@ -13,14 +13,18 @@ select s.roomNumber, rt.numberOfBeds, rt.pricePerNight
 from Rooms s, RoomTypes rt
 where s.roomType = rt.roomType;
 
-(select r.GuestEGN
+select g.FirstName, g.LastName
+from Guests g 
+join 
+((select r.GuestEGN
 from Reservations r
 group by r.GuestEGN 
 having COUNT(*) >= 2)
 intersect
 (select p.GuestEGN
 from Payments p
-where p.Method = 'VISA');
+where p.Method = 'VISA')) as dt
+on g.EGN = dt.GuestEGN;
 
 (select r.roomNumber
 from Rooms r
