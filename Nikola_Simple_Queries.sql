@@ -28,10 +28,10 @@ from
 ) as roomType
 where FirstName = 'Jane'
 
-select * 
+select top 8 * 
 from 
 (
-	select reservations.roomnumber, rooms.roomtype, reservations.GuestEGN 
+	select reservations.roomnumber, rooms.roomtype, reservations.CheckInDate, reservations.GuestEGN
 	from reservations 
 	join rooms 
 	on reservations.RoomNumber=rooms.roomNumber
@@ -40,8 +40,9 @@ from
 join guests 
 on guests.EGN=roomTs.GuestEGN
 where extranotes='NONE'
+order by roomTs.CheckInDate;
 
-select top 4 roomNumber, roomType, FirstName, LastName 
+select roomNumber, roomType, FirstName, LastName 
 from 
 (
 	select reservations.roomnumber, rooms.roomtype, reservations.GuestEGN, reservations.adults 
