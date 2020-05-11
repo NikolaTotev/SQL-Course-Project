@@ -2,7 +2,7 @@
 -- Simple Queries --
 select * from rooms where roomType = 'Pent House'
 select * from rooms where roomType = 'Apartment'
-select * from Reservations where GuestEGN = 'Guest3'
+select * from Reservations where GuestEGN = '6987446353'
 select * from Staff where salary > 500
 select * from Staff where Job = 'Waiter'
 select * from Staff where Job = 'Piccolo'
@@ -28,7 +28,7 @@ from
 ) as roomType
 where FirstName = 'Jane'
 
-select top 8 * 
+select * 
 from 
 (
 	select reservations.roomnumber, rooms.roomtype, reservations.GuestEGN 
