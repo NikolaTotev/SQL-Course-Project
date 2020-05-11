@@ -65,17 +65,17 @@ INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Child
 INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190517 11:00:00 AM', '20190524 11:00:00 AM', '20190313 11:00:00 AM', 2, 0, 4, '3354788556'); 
 INSERT INTO Reservations(CheckInDate,CheckOutDate,ReservationDate, Adults, Children, RoomNumber, GuestEGN) VALUES ('20190217 11:00:00 AM', '20190222 11:00:00 AM', '20190101 11:00:00 AM', 3, 1, 12, '5495218574');
 
-remove * from reser
+--remove * from reser
 --INSERT INTO Payments(id, GuestEGN, BaseFee, ExtraFee, Method, PaymentStatus, TransactionDate)
 --SELECT top 5 newid() , p.GuestEGN, p.BaseFee, 0, 'PayPal', 'Processing', GETDATE()
 --FROM PaymentInfo as p
 
 
 
-select * from Payments
+--select * from Payments
 
 
-select * from PaymentInfo
+--select * from PaymentInfo
 
 --select * from Reservations
 
