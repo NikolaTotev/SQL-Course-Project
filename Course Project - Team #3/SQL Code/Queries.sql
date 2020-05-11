@@ -1,0 +1,214 @@
+-- ========================================================================= -- 
+-- =================== Simple Queries =================== -- 
+-- ========================================================================= -- 
+select * from rooms where roomType = 'Pent House'
+select * from rooms where roomType = 'Apartment'
+select * from Reservations where GuestEGN = '6987446353'
+select * from Staff where salary > 500
+select * from Staff where Job = 'Waiter'
+select * from Staff where Job = 'Piccolo'
+
+-- ========================================================================= -- 
+-- =================== Queries on two or more relations  =================== -- 
+-- ========================================================================= --
+(select s.FirstName, s.LastName
+from Staff s)
+UNION ALL
+(select g.FirstName, g.LastName
+from Guests g);
+
+select g.FirstName, g.LastName
+from Guests g, Reservations r
+where g.EGN = r.GuestEGN and r.CheckInDate >= '20190101' and r.CheckOutDate < '20200101';
+
+select s.roomNumber, rt.numberOfBeds, rt.pricePerNight 
+from Rooms s, RoomTypes rt
+where s.roomType = rt.roomType;
+
+select g.FirstName, g.LastName
+from Guests g 
+join 
+((select r.GuestEGN
+from Reservations r
+group by r.GuestEGN 
+having COUNT(*) >= 2)
+intersect
+(select p.GuestEGN
+from Payments p
+where p.Method = 'VISA')) as dt
+on g.EGN = dt.GuestEGN;
+
+(select r.roomNumber
+from Rooms r
+where r.requiresCleaning = 1)
+union
+(select r.roomNumber
+from Rooms r
+where r.requiresMaintenance = 1);
+
+-- =================================================== -- 
+-- =================== Subqueries  =================== -- 
+-- =================================================== --
+select g.FirstName, g.LastName, (select COUNT(*) from Reservations r where r.GuestEGN = g.EGN) as num_reservations
+from Guests g;
+
+select s.FirstName, s.LastName, s.Job 
+from Staff s
+where s.Salary >= (select AVG(Salary) from Staff);
+
+select g.FirstName, g.LastName
+from Guests g
+join (select r.GuestEGN
+	from Reservations r
+	where r.CheckInDate >= '20190101' and r.CheckOutDate < '20200101') as dt
+on g.EGN = dt.GuestEGN;
+
+select s.FirstName, s.LastName, s.Salary
+from Staff s
+where s.Salary in (select MIN(Salary) from Staff);
+
+select s.FirstName, s.LastName, s.Job
+from Staff s
+where s.Salary >= (select MAX(st.Salary) 
+				from Staff st 
+				where st.EndDate is NULL and st.StartDate in 
+				(select MIN(StartDate) from Staff where EndDate is NULL) );
+
+-- ==================================================== -- 
+-- =================== Join Queries =================== -- 
+-- ==================================================== -- 
+select * 
+from 
+(
+	select reservations.roomnumber, rooms.roomtype 
+	from reservations 
+	join 
+	rooms 
+	on reservations.RoomNumber=rooms.roomNumber
+
+) as roomTypes 
+where roomtype = 'Apartment'
+
+select distinct * 
+from 
+(
+	select reservations.GuestEGN, Guests.FirstName,Guests.LastName,Guests.ExtraNotes
+	from reservations join Guests on reservations.GuestEGN=Guests.EGN
+) as roomType
+where FirstName = 'Jane'
+
+select top 8 * 
+from 
+(
+	select reservations.roomnumber, rooms.roomtype, reservations.CheckInDate, reservations.GuestEGN
+	from reservations 
+	join rooms 
+	on reservations.RoomNumber=rooms.roomNumber
+) as roomTs
+
+join guests 
+on guests.EGN=roomTs.GuestEGN
+where extranotes='NONE'
+order by roomTs.CheckInDate;
+
+select roomNumber, roomType, FirstName, LastName 
+from 
+(
+	select reservations.roomnumber, rooms.roomtype, reservations.GuestEGN, reservations.adults 
+	from reservations join rooms on reservations.RoomNumber=rooms.roomNumber
+) 
+
+as roomTs 
+join guests 
+on guests.EGN=roomTs.GuestEGN 
+where extranotes='NONE' and roomTs.Adults = 2
+
+
+select roomNumber, roomType, FirstName, LastName, CheckInDate, CheckOutDate 
+from 
+(
+	select reservations.roomnumber, rooms.roomtype, 
+		   reservations.GuestEGN, reservations.adults, 
+		   reservations.CheckInDate, reservations.CheckOutDate 
+	from reservations 
+	join rooms 
+	on reservations.RoomNumber=rooms.roomNumber
+) 
+as roomTs 
+join guests 
+on guests.EGN=roomTs.GuestEGN 
+where extranotes='NONE' and roomTs.Adults = 2 and roomTs.Roomtype = 'Pent House' and FirstName='Jane'
+
+-- ============================================================================ -- 
+-- =================== Group by and Aggregation Queries =================== -- 
+-- ============================================================================ -- 
+select g.FirstName, g.LastName
+from Guests g
+join
+	(select r.GuestEGN, COUNT(*) as num_count	
+	from Reservations r 
+	group by r.GuestEGN ) as dt
+on g.EGN = dt.GuestEGN
+where num_count >= 2;
+
+select p.Method, COUNT(*) count_payments
+from Payments p
+group by p.Method
+order by count_payments DESC;
+
+select p.Method, SUM(p.BaseFee + p.ExtraFee) as sum_from_method
+from Payments p 
+where p.PaymentStatus = 'Paid'
+group by p.Method;
+
+select p.PaymentStatus, COUNT(*) count_payments
+from Payments p
+group by p.PaymentStatus;
+
+select r.RoomNumber, COUNT(*) num_reservations
+from Reservations r
+group by r.RoomNumber;
+
+select rm.roomType, COUNT(*) as num_reservations
+from Reservations r
+join Rooms rm
+on r.RoomNumber = rm.roomNumber
+group by rm.roomType
+order by num_reservations DESC;
+
+select s.Job, COUNT(*) as num_people
+from Staff s
+group by s.Job;
+
+select g.FirstName, g.LastName, COUNT(*) as num_reservations
+from Guests g
+join Reservations r
+on g.EGN = r.GuestEGN
+group by g.EGN, g.FirstName, g.LastName
+order by num_reservations ASC;
+
+select gu.FirstName, gu.LastName, dt.sum_money
+from Guests gu
+join (select g.EGN, ROUND(SUM(DATEDIFF(day,r.CheckInDate,r.CheckOutDate)*rt.pricePerNight),2) as sum_money
+	from Guests g
+	join Reservations r
+	on g.EGN = r.GuestEGN
+	join Rooms rm 
+	on r.RoomNumber = rm.roomNumber
+	join RoomTypes rt 
+	on rm.roomType = rt.roomType
+	group by g.EGN) as dt
+on dt.EGN = gu.EGN;
+
+select gu.FirstName, gu.LastName, dt.avg_money
+from Guests gu
+join (select g.EGN, ROUND(AVG(DATEDIFF(day,r.CheckInDate,r.CheckOutDate)*rt.pricePerNight),2) as avg_money
+	from Guests g
+	join Reservations r
+	on g.EGN = r.GuestEGN
+	join Rooms rm 
+	on r.RoomNumber = rm.roomNumber
+	join RoomTypes rt 
+	on rm.roomType = rt.roomType
+	group by g.EGN) as dt
+on dt.EGN = gu.EGN;

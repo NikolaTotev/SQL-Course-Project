@@ -1,3 +1,7 @@
+-- =============================================================== -- 
+-- ================= MUST BE EXECUTED SEPARATELY ================= -- 
+-- =============================================================== -- 
+
 CREATE TRIGGER OnStaffInsertUpdate ON Staff
 FOR INSERT,UPDATE
 AS
@@ -13,7 +17,9 @@ ROLLBACK TRANSACTION;
 RETURN 
 END;
 
-
+-- =============================================================== -- 
+-- ================= MUST BE EXECUTED SEPARATELY ================= -- 
+-- =============================================================== -- 
 CREATE TRIGGER OnReservationInsertUpdate On Reservations
 FOR INSERT,UPDATE 
 AS

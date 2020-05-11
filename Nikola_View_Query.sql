@@ -10,3 +10,4 @@ Create View RoomInfo As
 	   join RoomTypes 
 	   on Rooms.roomType=RoomTypes.roomtype
 
+	   select * from GuestInfo
